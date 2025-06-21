@@ -19,6 +19,21 @@ export default function Home() {
             className="rotate-180" src={assets.menu_icon} alt=""/>
             <Image className="opacity-70" src={assets.chat_icon} alt=""/>
           </div>
+
+          {message.length === 0 ? (
+            <>
+              <div className="flex items-center gap-3">
+                <Image src={assets.logo_icon} alt="" className="h-16"/>
+                <p className="text-2xl font-medium">Hi, I'm DeepSeek.</p>
+              </div>
+              <p className="text-sm mt-2">How can I help you today?</p>
+            </>
+          ):
+          (
+          <div></div>
+        )
+        }        
+        
         </div>
       </div>
     </div>
