@@ -49,3 +49,5 @@ export const assets = {
   three_dots,
   new_icon,
 };
+
+export default assets;
