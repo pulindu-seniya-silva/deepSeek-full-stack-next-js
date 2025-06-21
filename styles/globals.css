@@ -1,4 +1,4 @@
-/*@import "tailwindcss";
+@import "tailwindcss";
 
 @theme {
   --color-primary: #4d6bfe;
@@ -10,4 +10,4 @@ html{
 
 ::-webkit-scrollbar{
   display: none;
-}*/
+}
