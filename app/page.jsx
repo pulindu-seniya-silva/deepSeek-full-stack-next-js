@@ -32,7 +32,9 @@ export default function Home() {
           (
           <div></div>
         )
-        }        
+        }     
+        {/*prompt box*/}
+        <p className="text-xs absolute bottom-1 text-gray-500">AI-generated, for reference only</p>   
         
         </div>
       </div>
