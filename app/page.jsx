@@ -10,6 +10,7 @@ export default function Home() {
   const [expand, setExpand] = useState(false)
   const [message, setMessages] = useState([])
   const [isLoading, setIsloading] = useState(false)
+  
 
   return (
     <div>
@@ -37,7 +38,7 @@ export default function Home() {
         }     
         <PromptBox isLoading={isLoading} setIsloading={setIsloading}/>
         <p className="text-xs absolute bottom-1 text-gray-500">AI-generated, for reference only</p>   
-        
+
         </div>
       </div>
     </div>

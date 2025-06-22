@@ -1,29 +1,25 @@
-"use client"
-
-import {Inter} from "next/font/google"
-import '../styles/globals.css'
-import { ClerkProvider } from "@clerk/clerk-react";
+import { Inter } from "next/font/google";
+import '../styles/globals.css';
+import ClerkProviderWrapper from './ClerkProviderWrapper';
 
 const inter = Inter({
-    variable: "--font-inter",
-    subsets: ["latin"],
-})
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
 
-/*export const metadata = {
-    title : "Deepseek - GreatStack",
-    description: "Full Stack Project",
-};*/
+export const metadata = {
+  title: "Deepseek - GreatStack",
+  description: "Full Stack Project",
+};
 
-export default function RootLayout ({ children }) {
-    return (
-        <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
-        <html lang="en">
-            <body
-             className={`${inter.className} antialiased`}
-            >
-                {children}
-            </body>
-        </html>
-        </ClerkProvider>
-    )
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={`${inter.className} antialiased`}>
+        <ClerkProviderWrapper>
+          {children}
+        </ClerkProviderWrapper>
+      </body>
+    </html>
+  );
 }

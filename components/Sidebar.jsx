@@ -6,6 +6,7 @@ import { useClerk, UserButton } from '@clerk/nextjs'
 const Sidebar = ({expand, setExpand}) => {
 
     const {openSignIn} = useClerk()
+    
 
     return (
         <div onClick={()=> expand ? setExpand(false) : setExpand(true)}
