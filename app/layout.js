@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import '../styles/globals.css';
-import ClerkProviderWrapper from './ClerkProviderWrapper';
+import ClerkProviderWrapper from '../components/ClerkProviderWrapper';
 
 const inter = Inter({
   variable: "--font-inter",
