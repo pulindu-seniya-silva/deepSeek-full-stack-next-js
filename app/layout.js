@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import '../styles/globals.css';
 import ClerkProviderWrapper from '../components/ClerkProviderWrapper';
 
+export const dynamic = "force-dynamic";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
