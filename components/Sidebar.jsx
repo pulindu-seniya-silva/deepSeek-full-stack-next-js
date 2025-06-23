@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
 import assets from '../assets/assets.js'
-import { useClerk, UserButton } from '@clerk/nextjs'
+//import { useClerk, UserButton } from '@clerk/nextjs'
 
 const Sidebar = ({expand, setExpand}) => {
 
-    const {openSignIn} = useClerk()
+   // const {openSignIn} = useClerk()
     
 
     return (
@@ -51,7 +51,7 @@ const Sidebar = ({expand, setExpand}) => {
                     </div>
                     </div>  {expand && <> <span>Get App</span> <Image alt="" src={assets.new_icon}/></>}
                 </div>
-        <div onClick={openSignIn}
+        <div //onClick={openSignIn}
         className={`flex items-center ${expand ? 'hover:bg-white/10 rounded-lg' : 'justify-center w-full'} gap-3 text-white/60 text-sm p-2 mt-2 cursor-pointer`}>
             <Image src={assets.profile_icon} alt='' className='w-7'/>
             {expand && <span>My profile</span>}
