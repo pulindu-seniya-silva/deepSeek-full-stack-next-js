@@ -1,4 +1,3 @@
-export const dynamic = "force-dynamic";
 import { Inter } from "next/font/google";
 import '../styles/globals.css';
 import ClerkProviderWrapper from '../components/ClerkProviderWrapper';
@@ -17,9 +16,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <ClerkProviderWrapper>
+   
           {children}
-        </ClerkProviderWrapper>
+     
       </body>
     </html>
   );
