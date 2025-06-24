@@ -2,7 +2,8 @@
 import Image from 'next/image'
 import React from 'react'
 import assets from '../assets/assets.js'
-import {useClerk, UserButton, userButton} from '@clerk/nextjs'
+import {useClerk, UserButton} from '@clerk/nextjs'
+import { useAppContext } from '../context/AppContext'
 
 const Sidebar = ({expand, setExpand}) => {
 

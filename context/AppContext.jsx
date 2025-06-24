@@ -1,5 +1,6 @@
 "use client"
-import { createContext} from "react";
+import { createContext, useContext} from "react";
+import { useUser } from "@clerk/nextjs";
 
 export const AppContext = createContext();
 
