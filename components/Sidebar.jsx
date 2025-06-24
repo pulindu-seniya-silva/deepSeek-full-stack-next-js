@@ -4,6 +4,7 @@ import React from 'react'
 import assets from '../assets/assets.js'
 import {useClerk, UserButton} from '@clerk/nextjs'
 import { useAppContext } from '../context/AppContext'
+import ChatLabel from './ChatLabel.jsx'
 
 const Sidebar = ({expand, setExpand}) => {
 
@@ -39,7 +40,7 @@ const Sidebar = ({expand, setExpand}) => {
 
                 <div className={`mt-8 text-white/25 text-sm ${expand? "block" : "hidden"}`}>
                     <p className='my-1'>Recents</p>
-                    {/* chat Lable*/}
+                    <ChatLabel/>
                 </div>
             </div>
             <div>
