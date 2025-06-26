@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useContext} from "react";
+import { createContext, useContext, useEffect} from "react";
 import { useUser } from "@clerk/nextjs";
 import axios from "axios";
 import toast from "react-hot-toast";
@@ -25,6 +25,9 @@ export const AppContextProvider = ({children}) => {
             await axios.post('/api/chat/create', {}, {headers:{
                 Authorization: `Bearer ${token}`
             }})
+        
+         fetchUsersChat();    
+
         } catch (error) {
             toast.error(errorToJSON.message)
         }
@@ -59,8 +62,19 @@ export const AppContextProvider = ({children}) => {
         }
     }
 
+    useEffect(()=>{
+        if(user) {
+            fetchUsersChat();
+        }
+    }, [user]) 
     const value = {
-        user
+        user,
+        chats,
+        setChats,
+        selectedChat,
+        setSelectedChat,
+        fetchUsersChat,
+        createNewChat
     }
     return <AppContext.Provider value={value} >{children}</AppContext.Provider>
 }
