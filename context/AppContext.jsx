@@ -33,8 +33,29 @@ export const AppContextProvider = ({children}) => {
     const fetchUsersChat = async () => {
         try {
             const token = await getToken();
+            const{data} = await axios.post('/api/chat/get', {}, {headers:{
+                Authorization: `Bearer ${token}`
+            }})
+            if(data.success){
+                console.log(data.data);
+                setChats(data.data)
+
+                //if user has no chats
+                if(data.data.length === 0) {
+                    await createNewChat();
+                    return fetchUsersChat();
+                }else{
+                    data.data.sort((a, b)=> new Date(b.updateAt) - new Date(a.updateAt));
+
+                    //set recently updated chat as selected chat
+                    setSelectedChat(data.data[0]);
+                    console.log(data.data[0]);
+                }
+            }else{
+                toast.error(data.message)
+            }
         } catch (error) {
-            
+            toast.error(data.message)
         }
     }
 
