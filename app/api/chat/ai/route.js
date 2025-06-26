@@ -1,3 +1,4 @@
+export const maxDuration = 60;
 import OpenAI from "openai";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
@@ -48,9 +49,12 @@ export async function POST(req) {
     message.timestamp = Date.now()
     data.messages.push(message);
     data.save();
+
+    return NextResponse.json({success: true, data: message})
   
     } catch (error) {
-
+      return NextResponse.json({success: false, error: error.message })
+  
     }
 
 }
