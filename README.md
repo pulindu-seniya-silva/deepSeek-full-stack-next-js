@@ -1,5 +1,14 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
+Mongo DB connection 
+<img src ="images/mongoDb.png"  width="400" alt="Alt Text">
+
+Clerk webhook configuration
+<img src ="imges/webhook.png"  width="400" alt="Alt Text">
+
+vercel deployment 
+<img src ="img/vercel.png"  width="400" alt="Alt Text">
+
 ## Getting Started
 
 First, run the development server:
