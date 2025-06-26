@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
+import connectDB from "../../../../configs/db";
 
 //initialize openAI client with DeepSeek API key and based URL
 const openai = new OpenAI({
@@ -23,6 +24,7 @@ export async function POST(req) {
         }
 
         //find chat document
+        await connectDB()
         const data = await Chat.findOne({userId, _id: chatId})
         
         //Create a user message object
@@ -44,9 +46,11 @@ export async function POST(req) {
 
     const message = completion.choices[0].message;
     message.timestamp = Date.now()
+    data.messages.push(message);
+    data.save();
   
     } catch (error) {
-        
+
     }
 
 }
