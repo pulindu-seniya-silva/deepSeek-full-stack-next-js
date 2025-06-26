@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 const PromptBox = ({setIsLoading, isLoading}) => {
 
     const [prompt, setPrompt] = useState('');
-    const {user, chats, setChats, selectedChat, setSelectedChat} = useAppContext();
+  /*  const {user, chats, setChats, selectedChat, setSelectedChat} = useAppContext();
 
     const sendPrompt = async (e)=>{
         const promptCopy = prompt;
@@ -27,14 +27,14 @@ const PromptBox = ({setIsLoading, isLoading}) => {
                 role: "user",
                 cotent: prompt,
                 timestamp: Data.now(),
-            }
+            } 
 
             //saving user prompt in chat array
-            
+
         } catch (error) {
             
-        }
-    }
+        } 
+    } */
     return (
         <form className={`w-full ${false ? "max-w-3xl" : "max-w-2xl"} bg-[#404045] p-4 rounded-3xl mt-4 transition-all`}>
             <textarea className='outline-none w-full resize-none overflow-hidden break-words bg-transparent'
