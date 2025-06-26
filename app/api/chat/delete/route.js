@@ -1,6 +1,6 @@
 import connectDB from "../../../../configs/db";
 import Chat from "../../../../models/chat"
-import { getAuth } from "@/clerk/nextjs/server";
+import { getAuth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
