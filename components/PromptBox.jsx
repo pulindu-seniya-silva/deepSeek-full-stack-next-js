@@ -4,11 +4,37 @@ import { useEffect, useState } from "react";
 import Image from 'next/image'
 import React from 'react'
 import assets from '../assets/assets.js'
+import { useAppContext } from "../context/AppContext.jsx";
+import toast from "react-hot-toast";
 
 const PromptBox = ({setIsLoading, isLoading}) => {
 
     const [prompt, setPrompt] = useState('');
+    const {user, chats, setChats, selectedChat, setSelectedChat} = useAppContext();
 
+    const sendPrompt = async (e)=>{
+        const promptCopy = prompt;
+
+        try {
+            e.preventDefault();
+            if(!user) return toast.error('Login to send message')
+            if(isLoading) return toast.error('wait for the previous prompt response');
+
+            setIsLoading(true)
+            setPrompt("")
+
+            const userPrompt = {
+                role: "user",
+                cotent: prompt,
+                timestamp: Data.now(),
+            }
+
+            //saving user prompt in chat array
+            
+        } catch (error) {
+            
+        }
+    }
     return (
         <form className={`w-full ${false ? "max-w-3xl" : "max-w-2xl"} bg-[#404045] p-4 rounded-3xl mt-4 transition-all`}>
             <textarea className='outline-none w-full resize-none overflow-hidden break-words bg-transparent'
