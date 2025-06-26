@@ -57,7 +57,8 @@ const PromptBox = ({setIsLoading, isLoading}) => {
             })
 
             if(data.success) {
-                setChats((prevChats) => prevChats.map((chat) => chat._id === selectedChat._id? {...chat, messages: [...chat.messages, data.data]} : chat))
+           setChats((prevChats) => prevChats.map((chat) => chat._id === selectedChat._id ? {...chat, messages: [...chat.messages, data.data]} : chat))
+           
            const message = data.data.content;
            const messageTokens = message.split(" ");
            let assistantMessage = {
@@ -75,10 +76,10 @@ const PromptBox = ({setIsLoading, isLoading}) => {
                 setTimeout(()=> {
                     assistantMessage.content = messageTokens.slice(0, i + 1).join(" ");
                     setSelectedChat((prev)=>{
-                        const updatedMessages = {
+                        const updatedMessages = [
                             ...prev.messages.slice(0, -1),
                             assistantMessage
-                        }
+                        ]
                         return {...prev, messages: updatedMessages}
                     })
                 }, i * 100)

@@ -37,7 +37,7 @@ export const AppContextProvider = ({children}) => {
     const fetchUsersChat = async () => {
         try {
             const token = await getToken();
-            const{data} = await axios.post('/api/chat/get', {}, {headers:{
+            const{data} = await axios.get('/api/chat/get', {}, {headers:{
                 Authorization: `Bearer ${token}`
             }})
             if(data.success){
@@ -75,7 +75,7 @@ export const AppContextProvider = ({children}) => {
         selectedChat,
         setSelectedChat,
         fetchUsersChat,
-        createNewChat
+        createNewChat,
     }
     return <AppContext.Provider value={value} >{children}</AppContext.Provider>
 }
