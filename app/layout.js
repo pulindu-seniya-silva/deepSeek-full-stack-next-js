@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import '../styles/globals.css';
 import { ClerkProvider } from '@clerk/nextjs'; // Import directly
 import { AppContextProvider } from "../context/AppContext";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,6 +21,12 @@ export default function RootLayout({ children }) {
         {/* Use ClerkProvider directly (Next.js handles SSR automatically) */}
         <ClerkProvider>
           <AppContextProvider>
+          <Toaster toastOptions={
+            {
+              success: {style: { background: "black", color: "white"}},
+              error: {style: {background: "black", color: "white"}}
+            }
+          }/>
           {children}
           </AppContextProvider>
         </ClerkProvider>
