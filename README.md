@@ -1,13 +1,13 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-Mongo DB connection 
-<img src ="images/mongoDb.png"  width="400" alt="Alt Text">
+## ✅ MongoDB Connection  
+<img src="images/mongoDb.png" width="800" alt="MongoDB Setup" />
 
-Clerk webhook configuration
-<img src ="imges/webhook.png"  width="400" alt="Alt Text">
+## 🔐 Clerk Webhook Configuration  
+<img src="images/webhook.png" width="800" alt="Clerk Webhook Configuration" />
 
-vercel deployment 
-<img src ="img/vercel.png"  width="400" alt="Alt Text">
+## 🚀 Vercel Deployment  
+<img src="images/vercel.png" width="800" alt="Vercel Deployment Screenshot" />
 
 ## Getting Started
 
