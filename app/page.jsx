@@ -1,10 +1,11 @@
 'use client'
 import Image from "next/image";
-import { useState} from "react";
+import { useEffect, useRef, useState} from "react";
 import { assets } from "../assets/assets";
 import Sidebar from "../components/Sidebar"
 import PromptBox from "../components/PromptBox";
 import Message from "../components/Message"
+import { useAppContext } from "../context/AppContext";
 
 export default function Home() {
 
@@ -12,7 +13,7 @@ export default function Home() {
   const [messages, setMessages] = useState([])
   const [isLoading, setIsloading] = useState(false)
   const {selectedChat} = useAppContext()
-  const containerRef = useRef(null)
+  const containerRef = useRef()
 
   useEffect(()=>{
     if(selectedChat){
@@ -51,7 +52,7 @@ export default function Home() {
           ):
           (
           <div ref={containerRef}
-          classname="relative flex flex-col items-center justify-start w-full mt-20 max-h-screen overflow-y-auto">
+          className="relative flex flex-col items-center justify-start w-full mt-20 max-h-screen overflow-y-auto">
             <p className="fixed top-8 border-transparent hover:border-gray-500/50 py-1 px-2 rounded-lg font-semibold mb-6">{selectedChat.name}</p>
             {messages.map((msg, index)=>(
                 <Message key={index} role={msg.role} content={msg.content}/>
