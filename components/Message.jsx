@@ -1,6 +1,7 @@
 import React from "react";
 import Image from 'next/image'
 import assets from '../assets/assets'
+import  Markdown from 'react-markdown'
 
 const Message = ({role, content}) => {
   return( 
@@ -32,7 +33,11 @@ const Message = ({role, content}) => {
                     :
                     (   <>
                         <Image src={assets.logo_icon} alt='' className='h-9 w-9 p-1 border border-white/15 rounded-full'/>
-                        <div className='space-y-4 w-full overflow-scroll' >{content}</div>
+                        <div className='space-y-4 w-full overflow-scroll' >
+                            <Markdown>
+                            {content}
+                            </Markdown>
+                            </div>
                         </>
                     )
                 }
