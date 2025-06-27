@@ -51,10 +51,13 @@ const PromptBox = ({setIsLoading, isLoading}) => {
                 messages: [...prev.messages, userPrompt]
             }))
 
+            
+            console.log("📌 selectedChat:", selectedChat);
             const {data} = await axios.post('/api/chat/ai', {
                 chatId: selectedChat._id,
                 prompt
             })
+            console.log("✅ API Response from /api/chat/ai:", data);
 
             if(data.success) {
            setChats((prevChats) => prevChats.map((chat) => chat._id === selectedChat._id ? {...chat, messages: [...chat.messages, data.data]} : chat))
