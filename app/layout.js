@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import '../styles/globals.css';
+import '../styles/prism.css';
 import { ClerkProvider } from '@clerk/nextjs'; // Import directly
 import { AppContextProvider } from "../context/AppContext";
 import { Toaster } from "react-hot-toast";
