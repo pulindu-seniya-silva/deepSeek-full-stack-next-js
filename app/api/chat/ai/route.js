@@ -3,6 +3,7 @@ import OpenAI from "openai";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import connectDB from "../../../../configs/db";
+import Chat from "../../../../models/chat"
 
 //initialize openAI client with DeepSeek API key and based URL
 const openai = new OpenAI({
@@ -32,7 +33,7 @@ export async function POST(req) {
         const userPrompt = {
             role: "user",
             content : prompt,
-            timestamp: DataTransfer.now()
+            timestamp: Date.now()
         };
 
         data.messages.push(userPrompt);
