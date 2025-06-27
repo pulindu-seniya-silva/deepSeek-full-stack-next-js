@@ -9,10 +9,26 @@ import Message from "../components/Message"
 export default function Home() {
 
   const [expand, setExpand] = useState(false)
-  const [message, setMessages] = useState([])
+  const [messages, setMessages] = useState([])
   const [isLoading, setIsloading] = useState(false)
-  
+  const {selectedChat} = useAppContext()
+  const containerRef = useRef(null)
 
+  useEffect(()=>{
+    if(selectedChat){
+      setMessages(selectedChat.messages)
+    }
+  },[selectedChat])
+
+   useEffect(()=>{
+    if(containerRef.current){
+      containerRef.current.scrollTo ({
+        top: containerRef.current.scrollHeight,
+        behavior: "smooth"
+      })
+    }
+  },[messages])
+  
   return (
     <div>
       <div className="flex h-screen">
@@ -34,8 +50,12 @@ export default function Home() {
             </>
           ):
           (
-          <div>
-            <Message role='user' content='What is next js'/>
+          <div ref={containerRef}>
+            <p className="fixed top-8 border-transparent hover:border-gray-500/50 py-1 px-2 rounded-lg font-semibold mb-6">{selectedChat.name}</p>
+            {messages.map((msg, index)=>(
+                <Message key={index} role={msg.role} content={msg.content}/>
+            ))}
+            
           </div>
         )
         }     
