@@ -7,7 +7,7 @@ import Prism from 'prismjs'
 const Message = ({role, content}) => {
 
     useEffect(()=> {
-            Prism.highlight()
+            Prism.highlightAll()
     }, [content])
 
   return( 

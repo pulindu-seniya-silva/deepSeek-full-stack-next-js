@@ -102,7 +102,7 @@ const PromptBox = ({setIsLoading, isLoading}) => {
     } 
     return (
         <form onSubmit={sendPrompt} 
-        className={`w-full ${false ? "max-w-3xl" : "max-w-2xl"} bg-[#404045] p-4 rounded-3xl mt-4 transition-all`}>
+        className={`w-full ${selectedChat?.messages.length > 0 ? "max-w-3xl" : "max-w-2xl"} bg-[#404045] p-4 rounded-3xl mt-4 transition-all`}>
             <textarea onKeyDown={handleKeyDown}
             className='outline-none w-full resize-none overflow-hidden break-words bg-transparent'
             rows={2}
