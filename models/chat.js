@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { Content } from "next/font/google";
 
 const ChatSchema = new mongoose.Schema(
     {
@@ -7,16 +6,16 @@ const ChatSchema = new mongoose.Schema(
         messages: [
             {
                 role: {type: String, required: true },
-                Content: {type: String, required: true},
+                content: {type: String, required: true},
                 timestamp: {type: Number, required: true},
 
             },
         ],
         userId: {type: String, required: true},
     },
-    {timestamp: true}
+    {timestamps: true}
 );
 
-const Chat = mongoose.models.Chat || mongoose.model("Chat", ChatSchema)
+const Chat = mongoose.models.Chat || mongoose.model("Chat", ChatSchema);
 
 export default Chat;
