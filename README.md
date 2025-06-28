@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
+## ✅AI-Powered Chat Interface
+<img src="images/chat.png" width="800" alt="MongoDB Setup" />
+
 ## ✅ MongoDB Connection  
 <img src="images/mongoDb.png" width="800" alt="MongoDB Setup" />
 
