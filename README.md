@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
-
 ## ✅AI-Powered Chat Interface
 <img src="images/chat.png" width="850" alt="MongoDB Setup" />
 
@@ -12,7 +10,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## 🚀 Vercel Deployment  
 <img src="images/vercel.png" width="850" alt="Vercel Deployment Screenshot" />
 
-## Getting Started
+## About App
 
 A sleek and dynamic AI-powered chat application built with Next.js, tailwind css, type script and java script integrating a simulated DeepSeek assistant. This project features:
  Key Features
