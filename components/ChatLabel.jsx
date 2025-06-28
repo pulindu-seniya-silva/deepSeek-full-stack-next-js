@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { assets } from '../assets/assets'
 import { useAppContext } from '../context/AppContext'
 import toast from 'react-hot-toast'
+import axios from 'axios'
 
 const ChatLabel = ({openMenu, setOpenMenu, id, name}) => {
 
@@ -17,7 +18,7 @@ const ChatLabel = ({openMenu, setOpenMenu, id, name}) => {
     const renameHandler = async ()=> {
         try {
             const newName = prompt('Enter new name')
-            if(!newname) return
+            if(!newName) return
             const {data} = await axios.post('/api/chat/rename', {chatId: id, name: newName})
             if(data.success) {
                 fetchUsersChats()
@@ -54,11 +55,11 @@ const ChatLabel = ({openMenu, setOpenMenu, id, name}) => {
              >
                 <Image src={assets.three_dots} alt='' className={`w-4 ${openMenu.id === id && openMenu.open ? '' : 'hidden'} group-hover:block`}/>
                 <div className={`absolute ${openMenu.id === id && openMenu.open ? 'block' : 'hidden'} -right-36 top-6 bg-gray-700 rounded-xl w-max p-2`}>
-                    <div onclick={renameHandler} className='flex items-center gap-3 hover'>
+                    <div onClick={renameHandler} className='flex items-center gap-3 hover'>
                         <Image src={assets.pencil_icon} alt='' className='w-4'/>
                         <p>Rename</p>
                     </div>
-                    <div onclick={deleteHandler} className='flex items-center gap-3 hover'>
+                    <div onClick={deleteHandler} className='flex items-center gap-3 hover'>
                         <Image src={assets.delete_icon} alt='' className='w-4'/>
                         <p>Delete</p>
                     </div>
