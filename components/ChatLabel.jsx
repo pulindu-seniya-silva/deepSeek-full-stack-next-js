@@ -7,7 +7,7 @@ import axios from 'axios'
 
 const ChatLabel = ({openMenu, setOpenMenu, id, name}) => {
 
-    const {fetchUsersChats, chats, setSelectedChat} = useAppContext()
+    const {fetchUsersChat, chats, setSelectedChat} = useAppContext()
 
     const selectChat = ()=> {
         const chatData = chats.find(chat => chat._id === id)
@@ -21,7 +21,7 @@ const ChatLabel = ({openMenu, setOpenMenu, id, name}) => {
             if(!newName) return
             const {data} = await axios.post('/api/chat/rename', {chatId: id, name: newName})
             if(data.success) {
-                fetchUsersChats()
+                fetchUsersChat()
                 setOpenMenu({id: 0, open: false})
                 toast.success(data.message)
             }else{
@@ -36,9 +36,9 @@ const ChatLabel = ({openMenu, setOpenMenu, id, name}) => {
             const confirm = window.confirm('Are you sure you want to delete this chat?')
             if(!confirm) return
             const {data} = await axios.post('/api/chat/delete', {chatId: id})
-            if(data.sucess){
-                fetchUsersChats()
-                setOpenMenu({ id: 0, open: flase})
+            if(data.success){
+                fetchUsersChat()
+                setOpenMenu({ id: 0, open: false})
             }else{
                 toast.error(data.message)
             }
