@@ -1,6 +1,9 @@
 ## ✅AI-Powered Chat Interface
 <img src="images/chat.png" width="850" alt="MongoDB Setup" />
 
+## 🎬 Demo
+https://github.com/user-attachments/assets/6a205ad0-2ecc-46ac-8763-50320b3194e1
+
 ## ✅ MongoDB Connection  
 <img src="images/mongoDb.png" width="850" alt="MongoDB Setup" />
 
